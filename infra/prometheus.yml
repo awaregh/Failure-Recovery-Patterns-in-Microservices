@@ -1,0 +1,29 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: gateway
+    static_configs:
+      - targets: ["gateway:8000"]
+    metrics_path: /metrics
+
+  - job_name: orders
+    static_configs:
+      - targets: ["orders:8001"]
+    metrics_path: /metrics
+
+  - job_name: payments
+    static_configs:
+      - targets: ["payments:8002"]
+    metrics_path: /metrics
+
+  - job_name: inventory
+    static_configs:
+      - targets: ["inventory:8003"]
+    metrics_path: /metrics
+
+  - job_name: notifications
+    static_configs:
+      - targets: ["notifications:8004"]
+    metrics_path: /metrics
